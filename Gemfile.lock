@@ -15,16 +15,10 @@ GEM
       swe4r (~> 0.0.2)
     erubis (2.7.0)
     funtimes (0.4.0)
-    gem (0.0.1.alpha)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     json (2.6.1)
-    log (1.1.0)
-      log4r
-      params
-    log4r (1.1.10)
     minitest (5.15.0)
-    params (1.1.0)
     rails_best_practices (1.22.1)
       activesupport
       code_analyzer (>= 0.5.2)
@@ -62,10 +56,9 @@ PLATFORMS
 DEPENDENCIES
   colorize (~> 0.8.1)
   ephemeris (~> 0.1.1)
-  gem (~> 0.0.1.alpha)
-  log (~> 1.1)
   rails_best_practices (~> 1.22)
   rspec (~> 3.10)
+  ruby-progressbar (~> 1.11)
   zodiac (~> 0.2.10)
 
 BUNDLED WITH

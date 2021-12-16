@@ -1,3 +1,5 @@
+require 'rubygems'
+require 'bundler/setup'
 
 # class Seeker
 #     def initialize(name, birthdate, zodiac)
@@ -45,4 +47,4 @@ puts birthdate
     When we do the looping for zodiacs and checking aspects compared to Sun sign, we may want to use a 'case'
 
     
-end
+=end
