@@ -40,3 +40,9 @@ puts birthdate
 #   puts Seeker1.birthdate         # bunch of hidden get methods. 
 #   puts Seeker1.zodiac
   
+
+=begin
+    When we do the looping for zodiacs and checking aspects compared to Sun sign, we may want to use a 'case'
+
+    
+end
