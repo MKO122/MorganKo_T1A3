@@ -6,6 +6,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    astrological-number (0.1.1)
     code_analyzer (0.5.2)
       sexp_processor
     colorize (0.8.1)
@@ -41,6 +42,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.3)
+    ruby-ephemeris (1.1.1)
     ruby-progressbar (1.11.0)
     sexp_processor (4.16.0)
     swe4r (0.0.2)
@@ -54,11 +56,14 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
+  astrological-number (~> 0.1.1)
   colorize (~> 0.8.1)
   ephemeris (~> 0.1.1)
   rails_best_practices (~> 1.22)
   rspec (~> 3.10)
+  ruby-ephemeris (~> 1.1.1)
   ruby-progressbar (~> 1.11)
+  swe4r (~> 0.0.2)
   zodiac (~> 0.2.10)
 
 BUNDLED WITH
