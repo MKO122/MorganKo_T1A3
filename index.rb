@@ -6,10 +6,9 @@ require 'bundler/setup'
 Bundler.require(:default)
 
 #Arrays stored here
-wise_crack = ["You don't say...", "Intriguing really...", "Is that so?", "Could you be...", "I wonder...", "It is becoming clear to me now...", "By choice?", "How unfortunate..."]
+wise_crack = ["You don't say...", "Intriguing really...", "Is that so?", "Could you be...", "I wonder...", "It is becoming clear to me now...", "By choice?", "How unfortunate...", "Oh my stars...", "By the Goddess!", "By the Heavens...", "The stars do not lie...", "By the Light..."]
 
 user = Data.new
-=begin
 
 puts "\nWhat is your name, Seeker?".magenta
 user.name = gets.chomp
@@ -104,8 +103,7 @@ puts """
 zodiac = Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
 
 puts "\nIt would appear that you are a " + Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
-puts "\nHow...interesting...".red
-=end
+puts "\nHow...interesting...\n\n".red
 
 prompt = TTY::Prompt.new
 
@@ -115,14 +113,34 @@ decision = prompt.select("Which path of enlightenment will you choose Seeker?", 
 if decision == "Another person"
   user.nonono
 elsif decision == "the_planets"
-  planet_position
+  puts "\nAh...I see. Very well then. Let us begin!\nWhat latitude were you born?".magenta
+    user.latitude = gets.chomp.to_i
+    puts "\n"
+    puts wise_crack.sample.red
+    progressbar = ProgressBar.create
+    33.times {progressbar.increment; sleep 0.01;}
+
+    puts "\nAnd how about longitude, #@name?".magenta
+    user.longitude = gets.chomp.to_i
+    puts "\n"
+    puts wise_crack.sample.red
+    progressbar = ProgressBar.create
+    66.times {progressbar.increment; sleep 0.01;}
+
+    puts "\nLast thing I need...timezone".magenta
+    user.timezone = gets.chomp.to_i
+    puts "\n"
+    puts wise_crack.sample.red
+    progressbar = ProgressBar.create
+    100.times {progressbar.increment; sleep 0.01;}
+
+    puts "\nAllow the stars to align...\n".black.on_magenta
+    positions = Ephemeris.new(user.birthdate, user.latitude, user.longitude, user.timezone)
+    #(yyyy-mm-dd, latitude, longtiude, timezone)
+    print positions.print
 else decision == "myself"
   more_info
 end
-# latitude = gets.chomp
-# longitude = gets.chomp
-# timezone = gets.chomp
-
 
 ##The pure adrenaline flowing through me. Is this how Einstein felt?
 # puts "\nYes or No"
