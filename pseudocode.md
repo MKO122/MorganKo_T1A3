@@ -1,4 +1,3 @@
-=begin
 Okay wtf is going on here
 
 1.0         Ask for user information
@@ -31,4 +30,58 @@ Okay wtf is going on here
 Misc        Utilise colorise gem
             Utilise Ascii art in output
         
-=end
+Feature one
+
+Dialogue
+
+What is your name, Seeker?
++name.gets
+
+Hello _name ...
+
+In what year were you born? yyyy
++birthyear.gets
+-Progressbar 25%
+-First message from array
+
+Oh? How interesting...and how about the month, Seeker? mm
++birthmonth.gets
+-Progressbar 50%
+-Second message from array
+
+No no no...this can't be...day? dd
++birthday.gets
+-Progressbar 75%
+-Third message from array
+
+I understood everything you said individually but as a statement it was not coherent. Tell me again, when you were born... yy-mm-dd
++birthdate.gets
+-Progressbar 75%
+
+So you're telling me you were born on birthday of month in year. birthdate? Y/N
+if Y proceed
+elsif N go back to beginning
+else print snarky message and then go back to beginning
+
+It would appear that you are a Date.new(birthyear, birthmonth, birthday).zodiac_sign
+Interesting...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            =end
+

@@ -20,6 +20,4 @@ gem "rails_best_practices", "~> 1.22"
 
 gem "ruby-progressbar", "~> 1.11"
 
-gem "astrological-number", "~> 0.1.1"
-
 gem "rspec", "~> 3.10"
