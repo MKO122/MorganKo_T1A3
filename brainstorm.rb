@@ -1,4 +1,4 @@
-require_relative 'feature1'
+require_relative 'dataclass'
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)

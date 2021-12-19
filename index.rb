@@ -1,4 +1,4 @@
-require_relative 'feature1'
+require_relative 'dataclass'
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
@@ -102,6 +102,9 @@ zodiac = Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
 
 puts "\nIt would appear that you are a " + Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
 puts "\nHow...interesting...".red
+
+prompt = TTY::Prompt.new
+
 
 # latitude = gets.chomp
 # longitude = gets.chomp

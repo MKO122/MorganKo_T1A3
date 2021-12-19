@@ -66,6 +66,21 @@ else print snarky message and then go back to beginning
 It would appear that you are a Date.new(birthyear, birthmonth, birthday).zodiac_sign
 Interesting...
 
+_____________________________________________________________
+
+Feature two
+
+Incorporate a tty menu
+
+To create a new menu
+prompt = TTY::Prompt.new
+
+Then to select between 3 options
+1. Quit
+2. Find zodiac of another person
+3. Ruby-ephemeris
+
+prompt.select("Which path of enlightenment will you choose Seeker?", %w(Find_Another_Person Kano Jax))
 
 
 
