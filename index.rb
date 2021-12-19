@@ -1,17 +1,23 @@
-require_relative 'storeddata'
+require_relative 'feature1'
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
 
-users = []
+#Arrays stored here
+wise_crack = ["How interesting...", "Intriguing really...", "Is that so?", "Could you be...", "I wonder...", "It is becoming clear to me now...", "By choice?", "How unfortunate..."]
 
-#seeker = Seeker.new
+user = Data.new
 
-seeker = Data.new
+puts "What is your name, Seeker?".magenta
+user.name = gets.chomp
 
-puts "What is your name, Seeker?"
-seeker.name = gets.chomp
-seeker.birthdate = gets.chomp
+puts "\nHello #{user.name.light_magenta}..."
+
+puts "\nIn what year were you born?".magenta
+user.birthdate = gets.chomp.to_i
+# puts wise_cracks.sample.red
+progressbar = ProgressBar.create
+25.times {progressbar.increment; sleep 0.01;}
 # birthday = gets.chomp
 # birthmonth = gets.chomp
 # birthyear = gets.chomp
@@ -20,13 +26,13 @@ seeker.birthdate = gets.chomp
 # longitude = gets.chomp
 # timezone = gets.chomp
 
-puts "You are #{seeker.name}"
 
-puts "Yes or No"
+##Idk wtf I'm doing with this yet...
+puts "\nYes or No"
 action = gets.chomp
 
 if action == "Yes"
-  summary_of_info
+  user.summary_of_info
 else
   exit
 end

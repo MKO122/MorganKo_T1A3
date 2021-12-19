@@ -1,4 +1,4 @@
-require_relative 'storeddata'
+require_relative 'feature1'
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
