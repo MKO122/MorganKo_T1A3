@@ -8,34 +8,53 @@ wise_crack = ["How interesting...", "Intriguing really...", "Is that so?", "Coul
 
 user = Data.new
 
-puts "What is your name, Seeker?".magenta
+puts "\nWhat is your name, Seeker?".magenta
 user.name = gets.chomp
 
 puts "\nHello #{user.name.light_magenta}..."
 
-puts "\nIn what year were you born?".magenta
-user.birthdate = gets.chomp.to_i
-# puts wise_cracks.sample.red
+puts "\nIn what year were you born? (yyyy)".magenta
+user.birthyear = gets.chomp.to_i
+puts "\n"
+puts wise_crack.sample.red
 progressbar = ProgressBar.create
 25.times {progressbar.increment; sleep 0.01;}
-# birthday = gets.chomp
-# birthmonth = gets.chomp
-# birthyear = gets.chomp
+
+puts "\n\nHow about month? (mm)".magenta
+user.birthmonth = gets.chomp.to_i
+puts "\n"
+puts wise_crack.sample.red
+progressbar = ProgressBar.create
+50.times {progressbar.increment; sleep 0.01;}
+
+puts "\n\nVery well then...the day? (dd)".magenta
+user.birthday = gets.chomp
+puts "\n"
+puts wise_crack.sample.red
+progressbar = ProgressBar.create
+75.times {progressbar.increment; sleep 0.01;}
+
+puts "\n\nNo no no, that does not make sense. It can't be. Tell me once more...very clearly then, when were you born? (yyyy-mm-dd)".magenta
+user.birthyear = gets.chomp
+puts "\n I shall now convene with the stars...".black.on_magenta
+progressbar = ProgressBar.create
+100.times {progressbar.increment; sleep 0.01;}
+
 # zodiac = gets.chomp
 # latitude = gets.chomp
 # longitude = gets.chomp
 # timezone = gets.chomp
 
 
-##Idk wtf I'm doing with this yet...
-puts "\nYes or No"
-action = gets.chomp
+##The pure adrenaline flowing through me. Is this how Einstein felt?
+# puts "\nYes or No"
+# action = gets.chomp
 
-if action == "Yes"
-  user.summary_of_info
-else
-  exit
-end
+# if action == "Yes"
+#   user.summary_of_info
+# else
+#   exit
+# end
 
 =begin
   Seeker1.name = name          # essentially here we are calling a 

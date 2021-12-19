@@ -14,7 +14,7 @@ class Data
   end
   
   def summary_of_info
-          puts "#@name + #@birthdate"
+          # puts "#@name + #@birthdate"
   end
   
 end
