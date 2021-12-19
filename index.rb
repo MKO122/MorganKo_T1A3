@@ -1,4 +1,6 @@
 require_relative 'dataclass'
+require_relative 'more_info'
+require_relative 'planet_position'
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
@@ -7,6 +9,7 @@ Bundler.require(:default)
 wise_crack = ["You don't say...", "Intriguing really...", "Is that so?", "Could you be...", "I wonder...", "It is becoming clear to me now...", "By choice?", "How unfortunate..."]
 
 user = Data.new
+=begin
 
 puts "\nWhat is your name, Seeker?".magenta
 user.name = gets.chomp
@@ -102,10 +105,20 @@ zodiac = Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
 
 puts "\nIt would appear that you are a " + Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
 puts "\nHow...interesting...".red
+=end
 
 prompt = TTY::Prompt.new
 
+choices = ["Another person", "the_planets", "myself"]
+decision = prompt.select("Which path of enlightenment will you choose Seeker?", choices)
 
+if decision == "Another person"
+  user.nonono
+elsif decision == "the_planets"
+  planet_position
+else decision == "myself"
+  more_info
+end
 # latitude = gets.chomp
 # longitude = gets.chomp
 # timezone = gets.chomp

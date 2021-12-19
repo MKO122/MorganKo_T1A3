@@ -1,4 +1,5 @@
 require_relative 'dataclass'
+require_relative 'planet_position'
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
@@ -24,11 +25,14 @@ class Data
     end
 end
 
-zodiac = Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
+prompt = TTY::Prompt.new
 
-puts Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
-puts zodiac
+prompt.select("Which path of enlightenment will you choose Seeker?", %w(Find_Another_Person Tell_Me_About_The_Planets Tell_Me_About_Myself))
 
+# zodiac = Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
+
+# puts Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
+# puts zodiac
 
 # puts "Year? yyyy"
 # birthyear = gets.chomp.to_i

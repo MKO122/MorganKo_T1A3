@@ -80,9 +80,13 @@ Then to select between 3 options
 2. Find zodiac of another person
 3. Ruby-ephemeris
 
-prompt.select("Which path of enlightenment will you choose Seeker?", %w(Find_Another_Person Kano Jax))
+prompt.select("Which path of enlightenment will you choose Seeker?", %w(Find_Another_Person Tell_Me_About_The_Planets Tell_Me_About_Myself))
 
+_____________________________________________________________
 
+Feature three
+
+Incorporate a tty multi-select menu
 
 
 

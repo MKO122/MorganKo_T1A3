@@ -1,3 +1,8 @@
+require_relative 'more_info'
+require_relative 'planet_position'
+require 'rubygems'
+require 'bundler/setup'
+Bundler.require(:default)
 
 class Data
   attr_accessor :name, :birthdate, :zodiac, :birthday, :birthmonth, :birthyear, :latitude, :longitude, :timezone,
@@ -107,8 +112,8 @@ class Data
   end
 
   def aquarius
-    puts """.-"-._.-"-._.-   The Water Bearer
-            .-"-._.-"-._.-"""
+    puts """.-''-._.-''-._.-   The Water Bearer
+            .-''-._.-''-._.-"""
   end 
 
   def pisces
