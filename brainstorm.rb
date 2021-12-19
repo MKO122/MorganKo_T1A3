@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
+require_relative 'storeddata'
 Bundler.require(:default)
 
 arr = ["The road is dangerous", "Help me", "Save me", "What are we?", "Helicopter helicopter", "Good soup"]
@@ -17,7 +18,7 @@ class Seeker
       @birthmonth = birthmonth
       @birthyear = birthyear
       @zodiac = zodiac
-      @latitude = latatitude
+      @latitude = latitude
       @longitude = longitude
       @timezone = timezone
     end
@@ -37,11 +38,18 @@ progressbar = ProgressBar.create
 
 puts Date.new(birthyear, birthmonth, birthday).zodiac_sign
 
+zodiac = Date.new(birthyear, birthmonth, birthday).zodiac_sign
+
+puts zodiac
+#I did it. I am a God.
+
 #puts Time.now.zodiac_sign   
 
 
-
+=begin 
+This is how attr_accessors are used. This also allows for the instance variables to be seen outside of the def/end and to be manipulated
 # class MyClass
+
 #     attr_accessor :greeting
   
 #     def initialize
@@ -54,9 +62,8 @@ puts Date.new(birthyear, birthmonth, birthday).zodiac_sign
 
 #   p m2.greeting
 
-##Working
 
-=begin
+This is the ruby-ephemeris gem
 today = Ephemeris.new("1995-07-26", -33.8227, 151.1942, 10)
 #(yyyy-mm-dd, latitude, longtiude, timezone)
 print today.print
@@ -72,18 +79,22 @@ print today.sun
 # [ra, dec, distance, ra_string, dec_string, rise, transit, set]
 ##Working
 
+##This is how I append the name to an array
 # puts "What is your name, Seeker?"
 # name = gets.chomp.to_s
 # Seekername << name
-
-# puts "Hello " + name + "..."
-
-# print bar
-
-# print Seekername
 ##How do i 'gets' this information and store it in an array for later use...
 
 # arr = ["1", "2", "3"]
 # arr.push("4")
 # print arr
+
+##This is how I use the hash and curly
+When variable has a value, I can recall that value thrugh the #{variable}
+# apples = 4
+# puts "I have #{apples} apples"
+## or
+# puts "I have %s apples" % apples
+## or
+# puts "I have %{a} apples" % {a: apples}
 =end
