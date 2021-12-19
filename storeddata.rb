@@ -1,7 +1,7 @@
 
 
 class Data
-    attr_accessor :name, :birthdate, :zodiac, :birthday, :birthmonth, :birthyear, :latitude, :longitude, :timezone,
+  attr_accessor :name, :birthdate, :zodiac, :birthday, :birthmonth, :birthyear, :latitude, :longitude, :timezone,
     def initialize
       @name = name
       @birthdate = birthdate
@@ -13,9 +13,10 @@ class Data
       @longitude = longitude
       @timezone = timezone
     end
-end
 
-def summary_of_info
-  # puts "#{seeker.name} + #{seeker.birthdate}"
-  puts @name "+" @birthdate
+    def summary_of_info 
+#      puts "#{seeker.name} + #{seeker.birthdate}"
+      puts "#{@name} + #{@birthdate}"
+    end
+
 end

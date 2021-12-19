@@ -1,6 +1,6 @@
+require_relative 'storeddata'
 require 'rubygems'
 require 'bundler/setup'
-require_relative 'storeddata'
 Bundler.require(:default)
 
 users = []
