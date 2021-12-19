@@ -3,13 +3,13 @@ require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
 
-arr = ["The road is dangerous", "Help me", "Save me", "What are we?", "Helicopter helicopter", "Good soup"]
-puts arr.sample
+# arr = ["The road is dangerous", "Help me", "Save me", "What are we?", "Helicopter helicopter", "Good soup"]
+# puts arr.sample
 
-progressbar = ProgressBar.create
-100.times { progressbar.increment; sleep 0.01; }
+# progressbar = ProgressBar.create
+# 100.times { progressbar.increment; sleep 0.01; }
 
-class Seeker
+class Data
     attr_accessor :name, :birthdate, :zodiac, :birthday, :birthmonth, :birthyear, :latitude, :longitude, :timezone
     def initialize
       @name = name
@@ -24,23 +24,36 @@ class Seeker
     end
 end
 
-puts "Year? yyyy"
-birthyear = gets.chomp.to_i
+zodiac = Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
 
-puts "Month? mm"
-birthmonth = gets.chomp.to_i
-
-puts "Day? dd"
-birthday = gets.chomp.to_i
-
-progressbar = ProgressBar.create
-100.times { progressbar.increment; sleep 0.01; }
-
-puts Date.new(birthyear, birthmonth, birthday).zodiac_sign
-
-zodiac = Date.new(birthyear, birthmonth, birthday).zodiac_sign
-
+puts Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
 puts zodiac
+
+
+# puts "Year? yyyy"
+# birthyear = gets.chomp.to_i
+
+# begin
+#     if birthyear = (birthyear < Time.now) && (birthyear > 1900)
+#  rescue => exception
+#      puts "Hey angel too many characters"
+#      exit
+# end
+
+# puts "Month? mm"
+# birthmonth = gets.chomp.to_i
+
+# puts "Day? dd"
+# birthday = gets.chomp.to_i
+
+# # progressbar = ProgressBar.create
+# # 100.times { progressbar.increment; sleep 0.01; }
+
+# puts Date.new(birthyear, birthmonth, birthday).zodiac_sign
+
+# zodiac = Date.new(birthyear, birthmonth, birthday).zodiac_sign
+
+# puts zodiac
 #I did it. I am a God.
 
 #puts Time.now.zodiac_sign   
