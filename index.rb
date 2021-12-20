@@ -141,14 +141,14 @@ if decision == "New Seeker"
   user.nonono
 elsif decision == "Planets"
     puts "\nAh...I see. Very well then. Let us begin!\n\nWhat latitude were you born?".magenta
-    user.latitude = gets.chomp.to_i
+    user.latitude = gets.chomp.to_f
     puts "\n"
     puts wise_crack.sample.red
     progressbar = ProgressBar.create
     33.times {progressbar.increment; sleep 0.01;}
 
     puts "\n\nAnd how about longitude, #@name?".magenta
-    user.longitude = gets.chomp.to_i
+    user.longitude = gets.chomp.to_f
     puts "\n"
     puts wise_crack.sample.red
     progressbar = ProgressBar.create
@@ -170,7 +170,7 @@ elsif decision == "Planets"
     print positions.print
 
 else decision == "No more"
-  puts "I'll be " + "seeing".light_magenta + " you..."
+  puts "Perhaps you are right...that is enough " + "for now...".red
   user.bigeye
 end
 
