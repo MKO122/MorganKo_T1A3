@@ -21,5 +21,3 @@ gem "rails_best_practices", "~> 1.22"
 gem "ruby-progressbar", "~> 1.11"
 
 gem "tty-prompt", "~> 0.23.1"
-
-gem "rspec", "~> 3.10"
