@@ -1,5 +1,4 @@
 require_relative 'dataclass'
-require_relative 'planet_position'
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
@@ -10,24 +9,45 @@ Bundler.require(:default)
 # progressbar = ProgressBar.create
 # 100.times { progressbar.increment; sleep 0.01; }
 
-class Data
-    attr_accessor :name, :birthdate, :zodiac, :birthday, :birthmonth, :birthyear, :latitude, :longitude, :timezone
-    def initialize
-      @name = name
-      @birthdate = birthdate
-      @birthday = birthday
-      @birthmonth = birthmonth
-      @birthyear = birthyear
-      @zodiac = zodiac
-      @latitude = latitude
-      @longitude = longitude
-      @timezone = timezone
-    end
-end
+# class Data
+#     attr_accessor :name, :birthdate, :zodiac, :birthday, :birthmonth, :birthyear, :latitude, :longitude, :timezone
+#     def initialize
+#       @name = name
+#       @birthdate = birthdate
+#       @birthday = birthday
+#       @birthmonth = birthmonth
+#       @birthyear = birthyear
+#       @zodiac = zodiac
+#       @latitude = latitude
+#       @longitude = longitude
+#       @timezone = timezone
+#     end
+# end
 
-prompt = TTY::Prompt.new
 
-prompt.select("Which path of enlightenment will you choose Seeker?", %w(Find_Another_Person Tell_Me_About_The_Planets Tell_Me_About_Myself))
+
+# prompt = TTY::Prompt.new
+# # choices = ["Aries", "Taurus", "Gemini", "Cancer"]
+# choices = ["A", "B"]
+# prompt.select("Which path of enlightenment will you choose Seeker?", choices)
+
+
+# user.birthyear = 1995
+# user.birthmonth = 03
+# user.birthday = 28
+
+# zodiac = Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
+
+# if choices == "A"
+#     puts zodiac
+#     puts user.zodiac
+#     puts @zodiac
+#     puts "#@zodiac"
+#     # user.asciitime
+# elsif choices == "B"
+#     puts "Thank you, bye now"
+#     exit
+# end
 
 # zodiac = Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
 

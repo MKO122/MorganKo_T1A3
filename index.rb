@@ -1,6 +1,5 @@
 require_relative 'dataclass'
 require_relative 'more_info'
-require_relative 'planet_position'
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
@@ -10,6 +9,7 @@ wise_crack = ["You don't say...", "Intriguing really...", "Is that so?", "Could 
 
 user = Data.new
 
+user.bigeye
 puts "\nWhat is your name, Seeker?".magenta
 user.name = gets.chomp
 
@@ -102,9 +102,38 @@ puts """
 
 zodiac = Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
 
-puts "\nIt would appear that you are a " + Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
+puts "\nIt would appear that you are a " + zodiac #or Date.new(user.birthyear, user.birthmonth, user.birthday).zodiac_sign
+
+case
+when zodiac == "Aries"
+  user.aries
+when zodiac == "Taurus"
+  user.taurus 
+when zodiac == "Gemini"
+  user.gemini
+when zodiac == "Cancer"
+  user.cancer
+when zodiac == "Leo"
+  user.leo 
+when zodiac == "Virgo"
+  user.virgo
+when zodiac == "Libra"
+  user.libra 
+when zodiac == "Scorpio"
+  user.scorpio
+when zodiac == "Sagittarius"
+  user.sagittarius
+when zodiac == "Capricorn"
+  user.capricorn
+when zodiac == "Aquarius"
+  user.aquarius
+when zodiac == "Pisces"
+  user.pisces
+end
+
 puts "\nHow...interesting...\n\n".red
 
+# puts """
 prompt = TTY::Prompt.new
 
 choices = ["Another person", "the_planets", "myself"]
@@ -113,21 +142,22 @@ decision = prompt.select("Which path of enlightenment will you choose Seeker?", 
 if decision == "Another person"
   user.nonono
 elsif decision == "the_planets"
-  puts "\nAh...I see. Very well then. Let us begin!\nWhat latitude were you born?".magenta
+  user.here_we_go
+    puts "\nAh...I see. Very well then. Let us begin!\n\nWhat latitude were you born?".magenta
     user.latitude = gets.chomp.to_i
     puts "\n"
     puts wise_crack.sample.red
     progressbar = ProgressBar.create
     33.times {progressbar.increment; sleep 0.01;}
 
-    puts "\nAnd how about longitude, #@name?".magenta
+    puts "\n\nAnd how about longitude, #@name?".magenta
     user.longitude = gets.chomp.to_i
     puts "\n"
     puts wise_crack.sample.red
     progressbar = ProgressBar.create
     66.times {progressbar.increment; sleep 0.01;}
 
-    puts "\nLast thing I need...timezone".magenta
+    puts "\n\nLast thing I need...timezone".magenta
     user.timezone = gets.chomp.to_i
     puts "\n"
     puts wise_crack.sample.red
@@ -137,6 +167,7 @@ elsif decision == "the_planets"
     puts "\nAllow the stars to align...\n".black.on_magenta
     positions = Ephemeris.new(user.birthdate, user.latitude, user.longitude, user.timezone)
     #(yyyy-mm-dd, latitude, longtiude, timezone)
+
     print positions.print
 else decision == "myself"
   more_info
