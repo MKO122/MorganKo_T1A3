@@ -1,5 +1,4 @@
 require_relative 'dataclass'
-require_relative 'more_info'
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
@@ -42,11 +41,11 @@ progressbar = ProgressBar.create
 100.times {progressbar.increment; sleep 0.01;}
 
 puts "\nAre you ready to confirm your truth #{user.name.light_magenta}? Y/N"
-choice = gets.chomp.capitalize
+confirm= gets.chomp.capitalize
 
-if choice == "Y"
+if confirm == "Y"
   user.summary_of_info
-elsif choice == "N"
+elsif confirm == "N"
   user.nonono
 else 
   user.stubborn
@@ -65,7 +64,7 @@ end
 
 puts "\nI shall now convene with the stars...".black.on_magenta
 progressbar = ProgressBar.create
-100.times {progressbar.increment; sleep 0.01;}
+100.times {progressbar.increment; sleep 0.05;}
 
 puts """
                  '
@@ -133,16 +132,14 @@ end
 
 puts "\nHow...interesting...\n\n".red
 
-# puts """
 prompt = TTY::Prompt.new
 
-choices = ["Another person", "the_planets", "myself"]
+choices = ["New Seeker", "Planets", "No more"]
 decision = prompt.select("Which path of enlightenment will you choose Seeker?", choices)
 
-if decision == "Another person"
+if decision == "New Seeker"
   user.nonono
-elsif decision == "the_planets"
-  user.here_we_go
+elsif decision == "Planets"
     puts "\nAh...I see. Very well then. Let us begin!\n\nWhat latitude were you born?".magenta
     user.latitude = gets.chomp.to_i
     puts "\n"
@@ -168,17 +165,16 @@ elsif decision == "the_planets"
     positions = Ephemeris.new(user.birthdate, user.latitude, user.longitude, user.timezone)
     #(yyyy-mm-dd, latitude, longtiude, timezone)
 
+    user.observatory
+
     print positions.print
-else decision == "myself"
-  more_info
+
+else decision == "No more"
+  puts "I'll be " + "seeing".light_magenta + " you..."
+  user.bigeye
 end
 
-##The pure adrenaline flowing through me. Is this how Einstein felt?
-# puts "\nYes or No"
-# action = gets.chomp
+prompt = TTY::Prompt.new
 
-# if action == "Yes"
-#   user.summary_of_info
-# else
-#   exit
-# end
+choices = ["New Seeker", "Planets", "No more"]
+decision = prompt.select("Which path of enlightenment will you choose Seeker?", choices)
